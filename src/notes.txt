@@ -1,0 +1,30 @@
+PegaWorld app for managing attendees
+
+Assumptions:
+There is a set number of attendeees (List of attendees).
+
+Admin
+Sign in form for Admin
+
+Home
+-search bar by event id
+- button to sign up attendees
+
+
+Event page (to edit event attendee list)
+-table that list attendees by event id
+
+Attendees
+Sign-in forms
+There should be an initial sign-in form when attendees first arrive.
+There should be another sign-in form for each event.
+
+list of attendeees for general list at initial sign-in
+list of attendeees for each event (searchable by event id)
+
+form 
+checkbox for event signup
+event id (if checked above)
+last name
+first name
+email address
