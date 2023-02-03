@@ -28,3 +28,12 @@ event id (if checked above)
 last name
 first name
 email address
+
+
+things to add later
+*form validation (tooltips, error styling, disabling buttons, etc);
+*Proper login form validation with appropriately encrypted passwords.
+*add additional functionality that cross checks the signing in attendee 
+to an invitation list but also have ability to take in any incoming 
+visitors and add them to mailing list.
+*add email verification and validation with use of secure libaries

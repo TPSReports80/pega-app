@@ -5,14 +5,27 @@ import {
   RiLogoutBoxRFill,
   RiUserAddFill,
   RiFileDownloadFill,
+  RiMenuFill,
 } from "react-icons/ri";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatchContext } from "../context/context.js";
+import { CustomLink } from "../utils/utils";
 const Navbar = () => {
   const dispatch = useDispatchContext();
+  const navigate = useNavigate();
+  const logout = () => {
+    navigate("/");
+    dispatch({ type: "LOG_OUT" });
+  };
   return (
     <nav className="nav">
       <img src={logo} alt="pega logo" className="nav-logo" />
+      <button
+        className="mobile-menu"
+        onClick={() => dispatch({ type: "TOGGLE_NAV" })}
+      >
+        <RiMenuFill />
+      </button>
       <ul className="nav_list">
         <CustomLink to="/">
           <RiHome2Fill />
@@ -25,25 +38,10 @@ const Navbar = () => {
           <RiFileDownloadFill />
         </CustomLink>
       </ul>
-      <button
-        className="exit-btn"
-        onClick={() => dispatch({ type: "LOG_OUT" })}
-      >
+      <button className="exit-btn" onClick={logout}>
         <RiLogoutBoxRFill />
       </button>
     </nav>
-  );
-};
-
-const CustomLink = ({ to, children }) => {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-  return (
-    <li className={isActive ? "active" : ""}>
-      <Link to={to} className="nav-link">
-        {children}
-      </Link>
-    </li>
   );
 };
 

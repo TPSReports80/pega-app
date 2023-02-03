@@ -46,12 +46,12 @@ const LoginForm = () => {
   };
   return (
     <div className="form-container ">
-      <div className="form-wrapper">
+      <div className="form-wrapper login-form-wrapper">
         <div aria-label="logo" className="logo-container">
           <img src={logo} alt="pega logo" />
           <span>World</span>
         </div>
-
+        <h1 className="login-title">Attendee Management Application</h1>
         <form
           onSubmit={handleSubmit}
           aria-labelledby="signin"

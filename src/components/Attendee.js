@@ -1,7 +1,6 @@
 import React from "react";
 
 const Attendee = (props) => {
-  console.log(props);
   return (
     <tr>
       <td>{props.lastName}</td>
