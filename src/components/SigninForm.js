@@ -150,8 +150,10 @@ const SigninForm = () => {
         <button className="btn btn-primary login-btn">Add</button>
       </div>
       {hasConfError && <ErrorMessage msg="Not a valid conference ID." />}
-      {hasError && <DisplayMessage msg="Existing invite" />}
-      {displayMsg && <DisplayMessage msg="New attendee has been added." />}
+      {hasError && <DisplayMessage msg="Member has been checked in." />}
+      {displayMsg && (
+        <DisplayMessage msg="New attendee has been added and checked in." />
+      )}
     </form>
   );
 };
