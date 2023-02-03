@@ -22,7 +22,7 @@ const AttendeeTable = () => {
     return <Attendee key={i + 1} {...el} />;
   });
   const emailList = state.viewList.map((person) => person.email).join(",");
-  console.log(emailList);
+
   return (
     <>
       <table id="attendee-table">

@@ -7,7 +7,7 @@ import { useStateContext } from "../context/context.js";
 
 const ViewList = () => {
   const state = useStateContext();
-  console.log(state.data);
+
   return (
     <div className="page-container">
       <div className="page-header">
