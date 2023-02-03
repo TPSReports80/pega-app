@@ -65,6 +65,7 @@ const SigninForm = () => {
       setHasError(true);
       setHasConfError(false);
       setDisplayMsg(false);
+      dispatch({ type: "UPDATE_ATTENDEE", payload: { id: +id, attendee } });
     } else {
       dispatch({ type: "ADD_ATTENDEE", payload: { id: +id, attendee } });
       clearForm();

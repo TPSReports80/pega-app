@@ -31,6 +31,7 @@ const AttendeeTable = () => {
             <th>Last Name</th>
             <th>First Name</th>
             <th>Email</th>
+            <th>Checked In</th>
           </tr>
         </thead>
         <tbody>{attendeeElements}</tbody>

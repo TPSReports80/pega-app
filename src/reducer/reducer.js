@@ -13,9 +13,9 @@ const reducer = (state, action) => {
       };
     case "ADD_ATTENDEE":
       const { id, attendee } = action.payload;
+      attendee.checkedIn = true;
       const newData = state.data.map((conf) => {
         if (conf.id === id) {
-          console.log("add attendee to conf");
           conf.attendees.push(attendee);
           return conf;
         } else {
@@ -27,6 +27,23 @@ const reducer = (state, action) => {
         data: newData,
       };
       break;
+    case "UPDATE_ATTENDEE":
+      const { id: updatedID, attendee: updatedAttendee } = action.payload;
+
+      const updatedData = state.data.map((conf) => {
+        if (conf.id === updatedID) {
+          const updatedList = conf.attendees.map((person) => {
+            if (person.email === updatedAttendee.email) {
+              return { ...person, checkedIn: true };
+            } else return person;
+          });
+          return { ...conf, attendees: updatedList };
+        } else return conf;
+      });
+      return {
+        ...state,
+        data: updatedData,
+      };
     case "INVALID_ID":
       return {
         ...state,
